@@ -1,0 +1,89 @@
+{
+  "date": "2026-05-31",
+  "schema_version": 1,
+  "summary": {
+    "LONG": 5,
+    "HOLD": 0,
+    "IGNORE": 1
+  },
+  "decisions": [
+    {
+      "schema_version": 1,
+      "date": "2026-05-31",
+      "ticker": "IBM",
+      "signal": "BREACH_UP",
+      "regime": "BULL",
+      "move_in_atr": 3.86,
+      "expected_3d_return_pct": 0.332,
+      "confidence": 0.592,
+      "has_news": true,
+      "action": "LONG",
+      "rationale": "continuation regime, momentum favours follow-through, news-confirmed"
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-05-31",
+      "ticker": "ORCL",
+      "signal": "BREACH_UP",
+      "regime": "BULL",
+      "move_in_atr": 2.57,
+      "expected_3d_return_pct": 0.332,
+      "confidence": 0.592,
+      "has_news": true,
+      "action": "LONG",
+      "rationale": "continuation regime, momentum favours follow-through, news-confirmed"
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-05-31",
+      "ticker": "MSFT",
+      "signal": "BREACH_UP",
+      "regime": "BULL",
+      "move_in_atr": 2.14,
+      "expected_3d_return_pct": 0.332,
+      "confidence": 0.592,
+      "has_news": true,
+      "action": "LONG",
+      "rationale": "continuation regime, momentum favours follow-through, news-confirmed"
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-05-31",
+      "ticker": "CRM",
+      "signal": "BREACH_UP",
+      "regime": "BULL",
+      "move_in_atr": 1.99,
+      "expected_3d_return_pct": 0.332,
+      "confidence": 0.592,
+      "has_news": true,
+      "action": "LONG",
+      "rationale": "continuation regime, momentum favours follow-through, news-confirmed"
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-05-31",
+      "ticker": "ADBE",
+      "signal": "BREACH_UP",
+      "regime": "BULL",
+      "move_in_atr": 1.98,
+      "expected_3d_return_pct": 0.332,
+      "confidence": 0.592,
+      "has_news": true,
+      "action": "LONG",
+      "rationale": "continuation regime, momentum favours follow-through, news-confirmed"
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-05-31",
+      "ticker": "COST",
+      "signal": "BREACH_DOWN",
+      "regime": "BULL",
+      "move_in_atr": -1.78,
+      "expected_3d_return_pct": -0.332,
+      "confidence": 0.592,
+      "has_news": true,
+      "action": "IGNORE",
+      "rationale": "down-breach in a continuation regime, no long edge (we don't short), news-confirmed"
+    }
+  ]
+}

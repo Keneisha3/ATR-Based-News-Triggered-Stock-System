@@ -1,0 +1,22 @@
+{
+  "command": "event-study",
+  "timestamp_utc": "2026-05-31T16:47:40+00:00",
+  "git_hash": "11a2212",
+  "data": {
+    "rows": 70280,
+    "tickers": 56,
+    "start": "2021-06-01",
+    "end": "2026-05-29"
+  },
+  "params": {
+    "atr_breach_mult": 1.5,
+    "max_days": 10,
+    "regime_ma_window": 50
+  },
+  "n_events": 3084,
+  "regime_counts": {
+    "bull": 2100,
+    "bear": 897,
+    "unknown": 87
+  }
+}

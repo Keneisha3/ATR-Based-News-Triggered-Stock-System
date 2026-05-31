@@ -1,0 +1,42 @@
+{
+  "command": "sweep",
+  "timestamp_utc": "2026-05-31T16:47:40+00:00",
+  "git_hash": "11a2212",
+  "data": {
+    "rows": 70280,
+    "tickers": 56,
+    "start": "2021-06-01",
+    "end": "2026-05-29"
+  },
+  "params": {
+    "atr_breach_mult": 1.5,
+    "long_only": false,
+    "hold_grid": [
+      3,
+      5,
+      10
+    ],
+    "cost_grid": [
+      0.0,
+      1.0,
+      5.0
+    ]
+  },
+  "robustness": {
+    "cells": 9,
+    "long_only": false,
+    "sharpe_mean": 0.724,
+    "sharpe_std": 0.317,
+    "stability_score": 2.29,
+    "sharpe_positive_pct": 100.0
+  },
+  "best_cell": {
+    "hold_days": 3.0,
+    "cost_bps": 0.0,
+    "total_return_pct": 138.33,
+    "cagr_pct": 19.05,
+    "sharpe": 1.19,
+    "max_drawdown_pct": -15.02,
+    "trades": 5466.0
+  }
+}

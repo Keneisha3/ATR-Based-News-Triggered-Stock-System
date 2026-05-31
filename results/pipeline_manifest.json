@@ -1,0 +1,19 @@
+{
+  "command": "pipeline",
+  "mode": "light",
+  "run_date": "2026-05-31",
+  "timestamp_utc": "2026-05-31T16:47:42+00:00",
+  "git_hash": "11a2212",
+  "data": {
+    "rows": 70280,
+    "tickers": 56,
+    "start": "2021-06-01",
+    "end": "2026-05-29"
+  },
+  "decision_summary": {
+    "LONG": 5,
+    "HOLD": 0,
+    "IGNORE": 1
+  },
+  "n_decisions": 6
+}

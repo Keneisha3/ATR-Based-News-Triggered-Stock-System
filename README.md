@@ -4,8 +4,6 @@
 > combines them with real-time news, and produces daily trading signals,
 > portfolio simulations, validation checks, and automated research reports.
 
----
-
 ## Overview
 
 This system monitors a defined equity universe and identifies cases where a
@@ -29,8 +27,6 @@ continue in bull regimes and fade in bear regimes.
 > The signals are illustrative and the simulations ignore real-world frictions
 > such as slippage and borrow costs. Do not trade on them.
 
----
-
 ## Core Idea
 
 Market movement is modeled as the interaction between volatility and information
@@ -44,8 +40,6 @@ A news-triggered alert is generated when:
 
 ATR normalizes movement across tickers, so a move in a calm stock and a move in
 a volatile stock can be compared on the same scale.
-
----
 
 ## Quick Start
 
@@ -89,8 +83,6 @@ To pull fresh market data before generating the memo:
 ./start.sh report --refresh
 ```
 
----
-
 ## Main Commands
 
 ```bash
@@ -126,8 +118,6 @@ python main.py watch --interval 5
 python main.py news-value
 python main.py ml --charts
 ```
-
----
 
 ## System Architecture
 
@@ -172,8 +162,6 @@ Decision and Reporting Layer
     - Notifications
     - Research memos and charts
 ```
-
----
 
 ## What the System Provides
 
@@ -288,8 +276,6 @@ reports/2026-05/report.md
 Historical reports are generated from the cached dataset sliced to the requested
 month end, so `--refresh` is intentionally not combined with `--month`.
 
----
-
 ## Results Snapshot
 
 Current live-run highlights from the repo:
@@ -309,8 +295,6 @@ Current live-run highlights from the repo:
 The important interpretation is conservative: the signal is measurable, modest,
 and regime-sensitive. It is best read as a decision aid and timing overlay, not
 as a complete trading system.
-
----
 
 ## ATR Signal Definition
 
@@ -340,8 +324,6 @@ abs(move_in_atr) >= ATR_BREACH_MULT
 
 The default threshold and other knobs live in `atr_news_alert/config.py`.
 
----
-
 ## Decision Contract
 
 Daily decisions are persisted to:
@@ -369,8 +351,6 @@ Each surface consumes the same schema:
 
 This keeps CLI output, notifications, reports, and outcome tracking aligned on
 one definition of what the system decided.
-
----
 
 ## Scheduling
 
@@ -401,8 +381,6 @@ For a terminal-based loop:
 python main.py watch
 ```
 
----
-
 ## Optional AI Sentiment
 
 By default, headlines are scored with an offline finance lexicon. If an API key
@@ -419,8 +397,6 @@ python main.py scan
 
 With no key, the system falls back to the local lexicon and continues running.
 
----
-
 ## Data Sources
 
 - Yahoo Finance via `yfinance` for OHLC price history
@@ -431,8 +407,6 @@ With no key, the system falls back to the local lexicon and continues running.
 Historical news is limited by RSS availability. The project stores future scan
 results in `data/news_archive.csv`, which allows the `news-value` command to
 become more useful as the archive grows.
-
----
 
 ## Outputs
 
@@ -490,8 +464,6 @@ reports/YYYY-MM/
   sweep.csv
 ```
 
----
-
 ## Tests
 
 The test suite is offline and deterministic.
@@ -512,8 +484,6 @@ Coverage includes:
 - Reproducibility manifests and chart generation
 - Decision schema, notifications, scheduling, and outcomes
 - Walk-forward validation and ML diagnostics
-
----
 
 ## Configuration
 
@@ -543,8 +513,6 @@ config/watchlist.csv
 Add or remove tickers there. Include sectors if you want sector-level research
 tables to stay useful.
 
----
-
 ## Key Design Principles
 
 - Event-driven signal generation rather than unconditional prediction
@@ -554,8 +522,6 @@ tables to stay useful.
 - Point-in-time validation where possible
 - Stored artifacts for every important run
 - Conservative interpretation of results
-
----
 
 ## Limitations
 
@@ -568,8 +534,6 @@ tables to stay useful.
   interval-specific extension.
 - Model-based headline classification is optional and depends on an API key.
 
----
-
 ## Future Extensions
 
 - Intraday signal generation with minute-level data
@@ -578,8 +542,6 @@ tables to stay useful.
 - Dashboard interface for live monitoring
 - Larger multi-regime and multi-asset validation
 - More explicit risk sizing and portfolio constraints
-
----
 
 ## Summary
 

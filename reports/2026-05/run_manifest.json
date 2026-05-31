@@ -1,0 +1,40 @@
+{
+  "command": "report",
+  "timestamp_utc": "2026-05-31T16:47:40+00:00",
+  "git_hash": "11a2212",
+  "data": {
+    "rows": 70280,
+    "tickers": 56,
+    "start": "2021-06-01",
+    "end": "2026-05-29"
+  },
+  "params": {
+    "atr_period": 14,
+    "atr_breach_mult": 1.5,
+    "price_lookback": "5y",
+    "forward_horizons": [
+      1,
+      5
+    ],
+    "hold_days": 5,
+    "cost_bps": 5.0,
+    "long_only": false,
+    "baseline_seed": 42
+  },
+  "metrics": {
+    "hold_days": 5,
+    "long_only": false,
+    "cost_bps": 5.0,
+    "trades": 5083,
+    "days": 1255,
+    "pct_days_invested": 97.5,
+    "total_return_pct": 43.51,
+    "benchmark_return_pct": 127.94,
+    "cagr_pct": 7.52,
+    "benchmark_cagr_pct": 17.99,
+    "sharpe": 0.58,
+    "benchmark_sharpe": 1.03,
+    "max_drawdown_pct": -14.51,
+    "benchmark_max_drawdown_pct": -26.03
+  }
+}
