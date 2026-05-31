@@ -45,6 +45,8 @@ A news-triggered alert is generated when:
 ATR normalizes movement across tickers, so a move in a calm stock and a move in
 a volatile stock can be compared on the same scale.
 
+---
+
 ## Quick Start
 
 **Requirements:** Python 3.9+ on macOS or Linux. Nothing else: no API keys, no
@@ -58,7 +60,7 @@ cd <your-repo>
 ./start.sh
 ```
 
-That's it. `start.sh` does everything:
+That's it. `start.sh` does everything for you:
 
 1. creates an isolated virtual environment (`.venv`)
 2. installs the dependencies
@@ -86,6 +88,8 @@ To pull fresh market data before generating the memo:
 ```bash
 ./start.sh report --refresh
 ```
+
+---
 
 ## Main Commands
 
@@ -122,6 +126,8 @@ python main.py watch --interval 5
 python main.py news-value
 python main.py ml --charts
 ```
+
+---
 
 ## System Architecture
 
@@ -166,6 +172,8 @@ Decision and Reporting Layer
     - Notifications
     - Research memos and charts
 ```
+
+---
 
 ## What the System Provides
 
@@ -280,6 +288,8 @@ reports/2026-05/report.md
 Historical reports are generated from the cached dataset sliced to the requested
 month end, so `--refresh` is intentionally not combined with `--month`.
 
+---
+
 ## Results Snapshot
 
 Current live-run highlights from the repo:
@@ -299,6 +309,8 @@ Current live-run highlights from the repo:
 The important interpretation is conservative: the signal is measurable, modest,
 and regime-sensitive. It is best read as a decision aid and timing overlay, not
 as a complete trading system.
+
+---
 
 ## ATR Signal Definition
 
@@ -328,6 +340,8 @@ abs(move_in_atr) >= ATR_BREACH_MULT
 
 The default threshold and other knobs live in `atr_news_alert/config.py`.
 
+---
+
 ## Decision Contract
 
 Daily decisions are persisted to:
@@ -355,6 +369,8 @@ Each surface consumes the same schema:
 
 This keeps CLI output, notifications, reports, and outcome tracking aligned on
 one definition of what the system decided.
+
+---
 
 ## Scheduling
 
@@ -385,6 +401,8 @@ For a terminal-based loop:
 python main.py watch
 ```
 
+---
+
 ## Optional AI Sentiment
 
 By default, headlines are scored with an offline finance lexicon. If an API key
@@ -401,6 +419,8 @@ python main.py scan
 
 With no key, the system falls back to the local lexicon and continues running.
 
+---
+
 ## Data Sources
 
 - Yahoo Finance via `yfinance` for OHLC price history
@@ -411,6 +431,8 @@ With no key, the system falls back to the local lexicon and continues running.
 Historical news is limited by RSS availability. The project stores future scan
 results in `data/news_archive.csv`, which allows the `news-value` command to
 become more useful as the archive grows.
+
+---
 
 ## Outputs
 
@@ -468,6 +490,8 @@ reports/YYYY-MM/
   sweep.csv
 ```
 
+---
+
 ## Tests
 
 The test suite is offline and deterministic.
@@ -488,6 +512,8 @@ Coverage includes:
 - Reproducibility manifests and chart generation
 - Decision schema, notifications, scheduling, and outcomes
 - Walk-forward validation and ML diagnostics
+
+---
 
 ## Configuration
 
@@ -517,6 +543,7 @@ config/watchlist.csv
 Add or remove tickers there. Include sectors if you want sector-level research
 tables to stay useful.
 
+---
 
 ## Key Design Principles
 
@@ -541,6 +568,8 @@ tables to stay useful.
   interval-specific extension.
 - Model-based headline classification is optional and depends on an API key.
 
+---
+
 ## Future Extensions
 
 - Intraday signal generation with minute-level data
@@ -549,6 +578,8 @@ tables to stay useful.
 - Dashboard interface for live monitoring
 - Larger multi-regime and multi-asset validation
 - More explicit risk sizing and portfolio constraints
+
+---
 
 ## Summary
 
